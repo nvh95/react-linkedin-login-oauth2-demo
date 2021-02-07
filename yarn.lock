@@ -8998,10 +8998,10 @@ react-is@^17.0.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.1.tgz"
   integrity sha512-NAnt2iGDXohE5LI7uBnLnqvLQMtzhkiAOLXTmv+qnF9Ky7xAPcX8Up/xWIhxvLVGJvuLiNc4xQLtuqDRzb4fSA==
 
-react-linkedin-login-oauth2@^1.0.9-alpha.0:
-  version "1.0.9-alpha.0"
-  resolved "https://registry.yarnpkg.com/react-linkedin-login-oauth2/-/react-linkedin-login-oauth2-1.0.9-alpha.0.tgz#0db1f4ee13f52cce3f5b64250af66baafee98d82"
-  integrity sha512-RnbREhAfXdShhmQeAAp2KXCROc23Z0iJ1zP8wM1c+euGTvduCkZkLOYgoqiPE0foL0g8oN2W7LG8D/HSjATZuw==
+react-linkedin-login-oauth2@^1.0.9:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/react-linkedin-login-oauth2/-/react-linkedin-login-oauth2-1.0.9.tgz#dbc49b52910f3052a533a4a0c0edafefab2290a9"
+  integrity sha512-QX4XSeFU23j7m8ogHhlnE1DS3IIPqVd58ck3vOXmc6PLAmIIB2SadDKMhy0JbM97kMca0J18K8ar322LyYLU3g==
   dependencies:
     query-string "~5.1.1"
 
