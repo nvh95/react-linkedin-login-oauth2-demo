@@ -6,7 +6,7 @@ import linkedin from "react-linkedin-login-oauth2/assets/linkedin.png";
 function LinkedInPage() {
   const { linkedInLogin } = useLinkedIn({
     clientId: "86vhj2q7ukf83q",
-    redirectUri: "http://localhost:3000/linkedin",
+    redirectUri: `${window.location.origin}/linkedin`,
     onSuccess: (code) => {
       console.log(code);
       setCode(code);
