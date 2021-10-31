@@ -12,9 +12,10 @@ function LinkedInPage() {
       setCode(code);
       setErrorMessage("");
     },
-    scope: "r_liteprofile r_emailaddress",
+    scope: "r_emailaddress r_liteprofile",
     onError: (error) => {
       console.log(error);
+      setCode("");
       setErrorMessage(error.errorMessage);
     },
   });
