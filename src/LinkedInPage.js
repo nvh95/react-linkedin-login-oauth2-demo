@@ -27,7 +27,7 @@ function LinkedInPage() {
         onClick={linkedInLogin}
         src={linkedin}
         alt="Log in with Linked In"
-        style={{ maxWidth: "180px" }}
+        style={{ maxWidth: "180px", cursor: "pointer" }}
       />
 
       {!code && <div>No code</div>}
