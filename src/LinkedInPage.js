@@ -1,9 +1,10 @@
 import React from "react";
-import styled from "styled-components";
 import { useLinkedIn } from "react-linkedin-login-oauth2";
 import linkedin from "react-linkedin-login-oauth2/assets/linkedin.png";
+import { GoogleLogin } from 'react-google-login';
 
-function LinkedInPage() {
+
+function LinkedInPage({typeOfLogin}) {
   const { linkedInLogin } = useLinkedIn({
     clientId: "86vhj2q7ukf83q",
     redirectUri: `${window.location.origin}/linkedin`,
@@ -22,8 +23,26 @@ function LinkedInPage() {
   const [code, setCode] = React.useState("");
   const [errorMessage, setErrorMessage] = React.useState("");
 
-  return (
-    <Wrapper>
+  const responseGoogle = (response) => {
+    console.log(response);
+  }
+
+  const showGmail=()=>{
+    return(
+      <GoogleLogin
+      clientId="491004959702-3bgqo54pt777f77dgl7cqd6s7e7rii81.apps.googleusercontent.com"
+      buttonText="Login"
+      onSuccess={responseGoogle}
+      onFailure={responseGoogle}
+      isSignedIn={false}
+      cookiePolicy={'single_host_origin'}
+    />
+    )
+  }
+
+  const showLin=() =>{
+    return(
+      <div style={{margin:"50px"}}>
       <img
         onClick={linkedInLogin}
         src={linkedin}
@@ -31,11 +50,11 @@ function LinkedInPage() {
         style={{ maxWidth: "180px", cursor: "pointer" }}
       />
 
-      {!code && <div>No code</div>}
+      {!code && <div>Not Logged In With Linkedin</div>}
       {code && (
         <div>
           <div>Authorization Code: {code}</div>
-          <div>
+          {/* <div>
             Follow{" "}
             <Link
               target="_blank"
@@ -45,24 +64,26 @@ function LinkedInPage() {
               this
             </Link>{" "}
             to continue
-          </div>
+          </div> */}
         </div>
       )}
       {errorMessage && <div>{errorMessage}</div>}
-    </Wrapper>
+    </div>
+    )
+  }
+
+  return (
+    <>
+    <div style={{margin:"50px"}}>
+    {typeOfLogin.includes("GMAIL") ? showGmail() : null}
+    </div>
+    <div style={{ marginTop: "90px" }}>
+         {typeOfLogin.includes("LINKEDIN") ? showLin() : null}
+      </div>
+    </>
+   
   );
 }
 
-const Wrapper = styled.div`
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-`;
-
-const Link = styled.a`
-  font-size: 20px;
-  font-weight: bold;
-`;
 
 export default LinkedInPage;
